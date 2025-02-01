@@ -7,7 +7,7 @@ resource "aws_default_vpc" "default" {}
 resource "aws_instance" "web" {
   ami                    = "ami-0bbc0801b3da5b7ae"
   instance_type          = var.instance_type
-  vpc_security_group_ids = [aws_security_group.web]
+  vpc_security_group_ids = [aws_security_group.web.id]
   tags = {
     Name  = var.name
     Owner = "Suhail"
